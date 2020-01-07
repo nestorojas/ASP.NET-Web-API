@@ -1,0 +1,35 @@
+﻿@model BlogViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+@section scripts
+{
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+
+}
+<div class="container">
+    <form asp-controller="Blog" asp-action="EditBlog" method="post">
+        <div class="form-group">
+            <h2>Edit Blog</h2>
+        </div>
+        <div class="form-group">
+            <label for="Title">@ViewBag.Result</label>
+        </div>
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control" id="Title" asp-for="Title">
+        </div>
+        <div class="form-group">
+            <label for="Body">Content</label>
+            @Html.TextAreaFor(model => model.Body, new { @class = "form-control summernote", rows = 5 })
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+<script>
+    $(function () {
+        $('.summernote').summernote({});
+    })
+</script>

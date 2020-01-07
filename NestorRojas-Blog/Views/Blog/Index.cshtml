@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BlogViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 col-md-2"></div>
+        <div class="col-sm-8 col-md-8">
+            @*<div class="text-right">
+                <a asp-controller="Blog" asp-action="CreateBlog">
+                    <i class="fas fa-plus-square fa-2x" data-toggle="tooltip" data-placement="bottom" title="Create Blog"></i>
+                </a>
+            </div>*@
+        </div>
+        <div class="col-sm-2 col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-md-2"></div>
+        <div class="col-sm-8 col-md-8">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        @*<th style="visibility:hidden"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>*@
+                        <th scope="col">Title</th>
+                        <th scope="col">Date Published</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            @*<td style="visibility:hidden">@item.Id</td>
+                            <th scope="row">
+                                <a asp-controller="Blog" asp-action="EditBlog" asp-route-id="@item.Id">
+                                    <i class="fas fa-edit" data-toggle="tooltip" data-placement="right" title="Edit"></i>
+                                </a>
+                            </th>
+                            <td><i class="far fa-trash-alt"></i></td>*@
+                            <td><a asp-controller="Blog" asp-action="ReadBlog" asp-route-Id="@item.Id">@item.Title</a></td>
+                            <td>@item.PublishDate</td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+        </div>
+        <div class="col-sm-2 col-md-2"></div>
+    </div>
+</div>
