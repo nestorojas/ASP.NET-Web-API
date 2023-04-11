@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MyEntity.DataModel;
-using MyEntity.DataModel.Tables;
+﻿using Entity.DataModel;
 
 namespace MyRepository.DataModel
 {
-    public class Repository : IRepository
+	public class Repository : IRepository
     {
         DataModelContext _context;
 
@@ -15,10 +10,10 @@ namespace MyRepository.DataModel
         {
             _context = context;
         }
-        public IQueryable<Blog> GetBlogs()
+        public List<Blog> GetBlogs()
         {
-            var blog = from b in _context.Blog select b;
-            return blog.OrderByDescending(x=>x.PublishDate);
+            var blog = _context.Blog.AsQueryable();
+            return blog.OrderByDescending(x=>x.PublishDate).ToList();
         }
         public Blog ReadBlog(int Id)
         {

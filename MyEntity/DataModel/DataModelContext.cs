@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyEntity.DataModel.Tables;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MyEntity.DataModel
 {

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MyEntity.DataModel.Tables;
+using Entity.DataModel;
 using Newtonsoft.Json;
 
 namespace NestorRojas_API.Controllers
@@ -20,7 +19,7 @@ namespace NestorRojas_API.Controllers
             _repository = repository;
         }
         [HttpGet]
-        public IQueryable<Blog> GetBlogs()
+        public List<Blog> GetBlogs()
         {
             return _repository.GetBlogs();
         }

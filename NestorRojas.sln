@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NestorRojas-API", "NestorRojas-API\NestorRojas-API.csproj", "{AFDAE2DE-B7D0-48E3-9B16-CB626D18706D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyEntity", "MyEntity\MyEntity.csproj", "{8A43FC68-A30B-423E-B859-97438DB27B4F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRepository", "MyRepository\MyRepository.csproj", "{B409A3C1-EA64-49A9-B772-6DE0C4C75FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestorRojas-Blog", "NestorRojas-Blog\NestorRojas-Blog.csproj", "{EE0555F1-979F-4356-B268-C974DCAC10E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NestorRojas-Blog", "NestorRojas-Blog\NestorRojas-Blog.csproj", "{EE0555F1-979F-4356-B268-C974DCAC10E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{66133844-97A1-4E49-95A4-246E2C1BBD12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{AFDAE2DE-B7D0-48E3-9B16-CB626D18706D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFDAE2DE-B7D0-48E3-9B16-CB626D18706D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFDAE2DE-B7D0-48E3-9B16-CB626D18706D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A43FC68-A30B-423E-B859-97438DB27B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A43FC68-A30B-423E-B859-97438DB27B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A43FC68-A30B-423E-B859-97438DB27B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A43FC68-A30B-423E-B859-97438DB27B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B409A3C1-EA64-49A9-B772-6DE0C4C75FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B409A3C1-EA64-49A9-B772-6DE0C4C75FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B409A3C1-EA64-49A9-B772-6DE0C4C75FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{EE0555F1-979F-4356-B268-C974DCAC10E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE0555F1-979F-4356-B268-C974DCAC10E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE0555F1-979F-4356-B268-C974DCAC10E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66133844-97A1-4E49-95A4-246E2C1BBD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66133844-97A1-4E49-95A4-246E2C1BBD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66133844-97A1-4E49-95A4-246E2C1BBD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66133844-97A1-4E49-95A4-246E2C1BBD12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
