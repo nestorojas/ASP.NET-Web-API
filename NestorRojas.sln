@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NestorRojas-API", "NestorRojas-API\NestorRojas-API.csproj", "{AFDAE2DE-B7D0-48E3-9B16-CB626D18706D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "NestorRojas-API\WebAPI.csproj", "{AFDAE2DE-B7D0-48E3-9B16-CB626D18706D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRepository", "MyRepository\MyRepository.csproj", "{B409A3C1-EA64-49A9-B772-6DE0C4C75FF6}"
 EndProject
