@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>NestorRojas_API</RootNamespace>
+    <RootNamespace>WebAPI</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
