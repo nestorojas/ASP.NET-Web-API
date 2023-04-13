@@ -352,3 +352,5 @@ MigrationBackup/
 /NestorRojas-API/appsettings.json
 /WebAPI/Properties/ServiceDependencies/dotnetlabsapi - Web Deploy/profile.arm.json
 /WebApp/appsettings.json
+/WebAPI/appsettings.json
+/WebApp/appsettings.json
