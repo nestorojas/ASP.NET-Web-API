@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 /NestorRojas-API/appsettings.json
 /NestorRojas-API/appsettings.json
+/WebAPI/Properties/ServiceDependencies/dotnetlabsapi - Web Deploy/profile.arm.json
