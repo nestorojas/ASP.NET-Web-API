@@ -5,16 +5,28 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2 col-md-2"></div>
-        <div class="col-sm-8 col-md-8">
-            @foreach (var item in Model.Take(2))
-            {
-                <div class="row"><h2>@item.Title</h2></div>
-                <div class="row" style="height:210px;overflow:hidden"><p>@Html.Raw(@item.Body)</p></div><hr />
-                <div class="row text-right"><a asp-controller="Blog" asp-action="ReadBlog" asp-route-Id="@item.Id">Read more...</a></div>
-                <div>&nbsp;&nbsp;</div>
+        <div class="col-sm-12">
+            @{
+                List<object> commands = new List<object>();
+                commands.Add(new { type = "Edit", buttonOption = new { iconCss = "e-icons e-edit", cssClass = "e-flat" } });
+                commands.Add(new { type = "Delete", buttonOption = new { iconCss = "e-icons e-delete", cssClass = "e-flat" } });
+                commands.Add(new { type = "Save", buttonOption = new { iconCss = "e-icons e-update", cssClass = "e-flat" } });
+                commands.Add(new { type = "Cancel", buttonOption = new { iconCss = "e-icons e-cancel-icon", cssClass = "e-flat" } });
+
             }
+            <div class="control-section">
+                <ejs-grid id="Grid" dataSource="ViewBag.dataSource" allowPaging="true">
+                    <e-grid-editSettings allowAdding="true" allowDeleting="true" allowEditing="true" allowEditOnDblClick="false"></e-grid-editSettings>
+                    <e-grid-pagesettings pageCount="5"></e-grid-pagesettings>
+                    <e-grid-columns>
+                        <e-grid-column field="Id" headerText="Post Id" validationRules="@(new { required=true})" isPrimaryKey="true" textAlign="Right" width="100"></e-grid-column>
+                        <e-grid-column field="Title" headerText="Title" validationRules="@(new { required=true})" width="140"></e-grid-column>
+                        <e-grid-column field="PublishDate" headerText="Publish Date" editType="datepickeredit" format="yMd" width="120"></e-grid-column>
+                        <e-grid-column field="IsDraft" headerText="Verified" editType="booleanedit" displayAsCheckBox="true" textAlign="Center" type="boolean" width="100"></e-grid-column>
+                        <e-grid-column headerText="Manage Records" width="150" commands="commands"></e-grid-column>
+                    </e-grid-columns>
+                </ejs-grid>
+            </div>
         </div>
-        <div class="col-sm-2 col-md-2"></div>
     </div>
 </div>

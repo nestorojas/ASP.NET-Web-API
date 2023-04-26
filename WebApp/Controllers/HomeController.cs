@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using Entity.DataModel;
 
 namespace NestorRojas_Blog.Controllers
 {
@@ -20,27 +21,12 @@ namespace NestorRojas_Blog.Controllers
         {
             _iconfiguration = iconfiguration;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            List<BlogViewModel> blog = new List<BlogViewModel>();
-            var apiServerURL = _iconfiguration["ApiServer"];
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(apiServerURL);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var data = GetAllRecords().Result;
+            ViewBag.datasource = data;
 
-
-                HttpResponseMessage response = await client.GetAsync("api/Blog/GetBlogs");
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseData = await response.Content.ReadAsStringAsync();
-                    blog = JsonConvert.DeserializeObject<List<BlogViewModel>>(responseData);
-                    response.Dispose();
-                }
-            }
-
-            return View(blog);
+            return View();
         }
 
         public IActionResult Privacy()
@@ -52,6 +38,31 @@ namespace NestorRojas_Blog.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public async Task<List<Blog>> GetAllRecords()
+        {
+            List<Blog> blog = new();
+            var apiServerURL = _iconfiguration["ApiServer"];
+            try
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(apiServerURL);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/Blog/GetBlogs");
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseData = await response.Content.ReadAsStringAsync();
+                    blog = JsonConvert.DeserializeObject<List<Blog>>(responseData);
+                    response.Dispose();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return blog;
         }
     }
 }
